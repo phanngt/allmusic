@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 import scrapy
 from items import ArtistdataItem
-from urllib import parse
 
 class BaseSpider(scrapy.Spider):
     #
@@ -25,8 +24,7 @@ class BaseSpider(scrapy.Spider):
                     result[key] = [x.strip() for x in result_list]
             yield result
         for url in response.xpath('//body//*[@href]/@href').extract():
-            target = parse.urljoin(self.base_url, url)
-            yield scrapy.Request(target, callback=self.parse_info)
+            yield scrapy.Request(response.urljoin(url), callback=self.parse_info)
 
 
 class AllMusicSpiderSpider(BaseSpider):
