@@ -10,7 +10,8 @@ import scrapy
 
 class ArtistdataItem(scrapy.Item):
     # define the fields for your item here like:
-    # name = scrapy.Field()
     name = scrapy.Field()
-    birthdate = scrapy.Field()
+    active = scrapy.Field()
+    genre = scrapy.Field()
+    styles = scrapy.Field()
     pass
