@@ -14,4 +14,5 @@ class ArtistdataItem(scrapy.Item):
     active = scrapy.Field()
     genre = scrapy.Field()
     styles = scrapy.Field()
+    biography = scrapy.Field()
     pass
